@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-fusionauth-oidc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Authenticate to FusionAuth or any OpenID Connect identity provider.",
   "main": "library.js",
   "repository": {
