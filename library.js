@@ -78,7 +78,7 @@
 				!settings.tokenEndpoint ||
 				!settings.userInfoEndpoint) {
 				winston.info('OpenID Connect will not be available until it is configured!');
-				return callback();
+				return callback(null, strategies);
 			}
 
 			settings.callbackURL = nconf.get('url') + constants.callbackURL;
