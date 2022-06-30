@@ -20,13 +20,13 @@
 		pluginSettingsURL: '/admin/plugins/fusionauth-oidc',
 		pluginSettings: new Settings('fusionauth-oidc', '1.0.0', {
 			// Default settings
-			clientId: null,
-			clientSecret: null,
+			clientId: '',
+			clientSecret: '',
 			emailClaim: 'email',
-			discoveryBaseURL: null,
-			authorizationEndpoint: null,
-			tokenEndpoint: null,
-			userInfoEndpoint: null,
+			discoveryBaseURL: '',
+			authorizationEndpoint: '',
+			tokenEndpoint: '',
+			userInfoEndpoint: '',
 		}, false, false),
 	};
 
