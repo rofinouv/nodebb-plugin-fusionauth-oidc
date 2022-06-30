@@ -86,7 +86,7 @@
 			// If you call this twice it will overwrite the first.
 			passport.use(constants.name, new PassportOIDC(settings, (req, accessToken, refreshToken, profile, callback) => {
 				const email = profile[settings.emailClaim || 'email'];
-				const isAdmin = settings.rolesClaim ? (profile[settings.rolesClaim] === 'admin' || (profile[settings.rolesClaim].some && profile[settings.rolesClaim].some((value) => value === 'admin'))) : false;
+				const isAdmin = settings.rolesClaim ? (profile[settings.rolesClaim] === 'admin' || (profile[settings.rolesClaim] && profile[settings.rolesClaim].some && profile[settings.rolesClaim].some((value) => value === 'admin'))) : false;
 				Oidc.login({
 					oAuthid: profile.sub,
 					username: profile.preferred_username || email.split('@')[0],
