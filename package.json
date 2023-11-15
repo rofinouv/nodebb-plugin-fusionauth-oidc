@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-fusionauth-oidc",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Authenticate to FusionAuth or any OpenID Connect identity provider.",
   "main": "library.js",
   "repository": {
@@ -31,7 +31,7 @@
     "passport-oauth2": "^1.5.0"
   },
   "nbbpm": {
-    "compatibility": "^1.0.1"
+    "compatibility": "^3.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -59,6 +59,6 @@
     ]
   },
   "scripts": {
-    "prepare": "npx tsc src/*.ts"
+    "prepare": "tsc"
   }
 }
