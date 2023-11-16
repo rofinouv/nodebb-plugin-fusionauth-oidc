@@ -1,6 +1,7 @@
 'use strict';
 
 import {save, load} from 'settings';
+import {alert} from 'alerts';
 
 const updateField = function (selector, value) {
   if (!value) {
@@ -18,7 +19,7 @@ export function init() {
 
   const saveForm = function (form) {
     save('fusionauth-oidc', form, function () {
-      app.alert({
+      alert({
         type: 'success',
         alert_id: 'sso-oidc-saved',
         title: 'Settings Saved',
@@ -44,21 +45,9 @@ export function init() {
       return;
     }
 
-    const errorFunc = () => {
-      app.alert({
-        type: 'danger',
-        alert_id: 'sso-oidc-error',
-        title: 'An error occurred ',
-        message: 'An error has occurred while trying to discover the OIDC configuration. Make sure that this platform supports the well known configuration URL and that you have the right URL.',
-      });
-    };
-
-    const timeout = setTimeout(errorFunc, 5000);
-
     fetch(baseURL + '/.well-known/openid-configuration')
       .then((res) => res.json())
       .then((json) => {
-        clearTimeout(timeout);
         updateField('input[name="authorizationEndpoint"]', json.authorization_endpoint);
         updateField('input[name="tokenEndpoint"]', json.token_endpoint);
         updateField('input[name="userInfoEndpoint"]', json.userinfo_endpoint);
@@ -66,9 +55,13 @@ export function init() {
         saveForm(form);
       })
       .catch((e) => {
-        clearTimeout(timeout);
         console.error(e);
-        errorFunc();
+        alert({
+          type: 'error',
+          alert_id: 'sso-oidc-error',
+          title: 'An error occurred',
+          message: 'An error has occurred while trying to discover the OIDC configuration. Make sure that this platform supports the well known configuration URL and that you have the right URL.',
+        });
       });
   });
 }
