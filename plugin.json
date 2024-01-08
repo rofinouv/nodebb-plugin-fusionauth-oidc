@@ -35,7 +35,7 @@
       "method": "redirectLogout"
     }
   ],
-  "modules": {
-    "../admin/plugins/fusionauth-oidc.js": "static/lib/admin.js"
-  }
+  "acpScripts": [
+    "static/lib/admin.js"
+  ]
 }
