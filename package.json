@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-fusionauth-oidc",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Authenticate to FusionAuth or any OpenID Connect identity provider.",
   "main": "library.js",
   "repository": {
@@ -21,30 +21,36 @@
     "name": "Tyler Scott",
     "email": "tyler@fusionauth.io"
   },
+  "maintainers": [
+    {
+      "name": "Vinícius Campitelli",
+      "email": "vinicius.campitelli@fusionauth.io"
+    }
+  ],
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/FusionAuth/nodebb-plugin-fusionauth-oidc/issues"
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "async": "^2",
-    "passport-oauth2": "^1.5.0"
+    "async": "^3.2.5",
+    "passport-oauth2": "^1.7.0"
   },
   "nbbpm": {
-    "compatibility": "^1.0.1"
+    "compatibility": "^3.5.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-angular": "^8.3.4",
-    "@types/async": "^3.0.8",
-    "@types/express": "^4.17.3",
-    "@types/passport-oauth2": "^1.4.8",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "typescript": "^3.9.10"
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-angular": "^18.4.2",
+    "@types/async": "^3.2.23",
+    "@types/express": "^4.17.21",
+    "@types/passport-oauth2": "^1.4.15",
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "typescript": "^5.2.2"
   },
   "husky": {
     "hooks": {
@@ -59,6 +65,6 @@
     ]
   },
   "scripts": {
-    "prepare": "npx tsc src/*.ts"
+    "prepare": "tsc"
   }
 }
