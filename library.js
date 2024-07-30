@@ -12,6 +12,7 @@
 
 	const passport = module.parent.require('passport');
 	const nconf = module.parent.require('nconf');
+	const axios = module.parent.require('axios');
 	const winston = module.parent.require('winston');
 
 	const constants = {
@@ -140,8 +141,14 @@
 								User.create({
 									username: payload.username,
 									email: payload.email,
+									fullname: payload.name
 								}, callback);
 							} else {
+								const data = User.getUserData(uid);
+								User.updateProfile(uid, {
+									...data,
+									fullname: payload.name
+								});
 								callback(null, uid); // Existing account -- merge
 							}
 						},
