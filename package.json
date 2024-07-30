@@ -1,11 +1,11 @@
 {
-  "name": "nodebb-plugin-fusionauth-oidc",
+  "name": "nodebb-plugin-fusionauth-oidc-cfi",
   "version": "2.0.0",
-  "description": "Authenticate to FusionAuth or any OpenID Connect identity provider.",
+  "description": "Authenticate to FusionAuth or any OpenID Connect identity provider (CFI CAST).",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FusionAuth/nodebb-plugin-fusionauth-oidc"
+    "url": "https://github.com/rofinouv/nodebb-plugin-fusionauth-oidc.git"
   },
   "keywords": [
     "nodebb",
